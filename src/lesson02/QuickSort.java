@@ -6,41 +6,42 @@ package lesson02;
  */
 public class QuickSort {
 
-    public static void sort(int[] array) {
-        sortHelper(array, 0, array.length - 1);
+    /**
+     * Sort an array by Quick sort algorithm
+     *
+     * @param ar  array
+     * @param <E> Comparable type
+     */
+    public static <E extends Comparable<E>> void sort(E[] ar) {
+        sortHelper(ar, 0, ar.length - 1);
     }
 
-    public static void sortHelper(int[] array, int left, int right) {
-
-        System.out.println("for test");
-        if (right > left) {
-            int index = partition(array, left, right);
-            sortHelper(array, left, index - 1);
-            sortHelper(array, index, right);
+    public static <E extends Comparable<E>> void sortHelper(E[] ar, int left, int right) {
+        if (right <= left) {
+            return;
         }
+        int index = partition(ar, left, right);
+        sortHelper(ar, left, index - 1);
+        sortHelper(ar, index, right);
     }
 
-    public static int partition(int[] array, int left, int right) {
-        int pivot = array[left + (right - left) / 2]; // fix overflow
-
+    public static <E extends Comparable<E>> int partition(E ar[], int left, int right) {
+        E pivot = ar[left + (right - left) / 2]; // no overflow
         while (left <= right) {
-            while (array[left] < pivot) {
-                ++left;
+            while (ar[left].compareTo(pivot) < 0) {
+                left++;
             }
-
-            while (array[right] > pivot) {
-                --right;
+            while (ar[right].compareTo(pivot) > 0) {
+                right--;
             }
-
             if (left <= right) {
-                int tmp = array[left];
-                array[left] = array[right];
-                array[right] = tmp;
-                ++left;
-                --right;
+                E tmp = ar[left];
+                ar[left] = ar[right];
+                ar[right] = tmp;
+                left++;
+                right--;
             }
         }
-
         return left;
     }
 }

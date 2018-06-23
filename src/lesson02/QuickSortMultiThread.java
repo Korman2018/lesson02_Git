@@ -9,12 +9,15 @@ public class QuickSortMultiThread extends QuickSort {
 
     /**
      * Sort an array by Quick sort algorithm
+     *
+     * @param ar  array
+     * @param <E> Comparable type
      */
-    public static void sort(int[] ar) {
+    public static <E extends Comparable<E>> void sort(E[] ar) {
         sortHelper(ar, 0, ar.length - 1);
     }
 
-    public static void sortHelper(final int[] ar, final int left, final int right) {
+    public static <E extends Comparable<E>> void sortHelper(final E[] ar, final int left, final int right) {
         if (right <= left) {
             return;
         }
