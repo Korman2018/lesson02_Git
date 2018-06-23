@@ -19,7 +19,7 @@ public class QuickSort {
     }
 
     public static int partition(int[] array, int left, int right) {
-        int pivot = array[(left + right) / 2];
+        int pivot = array[left + (right - left) / 2]; // fix overflow
 
         while (left <= right) {
             while (array[left] < pivot) {
