@@ -11,6 +11,8 @@ public class QuickSort {
     }
 
     public static void sortHelper(int[] array, int left, int right) {
+
+        System.out.println("for test");
         if (right > left) {
             int index = partition(array, left, right);
             sortHelper(array, left, index - 1);

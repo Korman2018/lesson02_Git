@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Runner {
 
     public static void main(String[] args) {
-        int[] array = new int[100];
+        int[] array = new int[500];
 
         for (int i = 0; i < array.length; ++i) {
             array[i] = array.length - i;
