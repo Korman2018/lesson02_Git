@@ -26,7 +26,7 @@ public class QuickSort {
     }
 
     public static <E extends Comparable<E>> int partition(E ar[], int left, int right) {
-        System.out.println("in method partition");
+        System.out.println("in partition  left cursor: " + left + " right cursor: " + right);
         E pivot = ar[left + (right - left) / 2]; // no overflow
         while (left <= right) {
             while (ar[left].compareTo(pivot) < 0) {
