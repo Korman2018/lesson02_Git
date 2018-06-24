@@ -11,13 +11,13 @@ public class QuickSortSingleThreadTest {
 
     @Test
     public void testQuickSort() {
-        int[] actual = new int[500_000];
+        Integer[] actual = new Integer[500_000];
         Random random = new Random();
 
         for (int i = 0; i < actual.length; i++) {
             actual[i] = random.nextInt();
         }
-        int[] expected = Arrays.copyOf(actual, actual.length);
+        Integer[] expected = Arrays.copyOf(actual, actual.length);
         Arrays.sort(expected);
 
         long start = System.currentTimeMillis();
