@@ -11,7 +11,7 @@ public class QuickSortSingleThreadTest {
 
     @Test
     public void testQuickSort() {
-        Integer[] actual = new Integer[100_000];
+        Integer[] actual = new Integer[300_000];
         Random random = new Random();
 
         for (int i = 0; i < actual.length; i++) {
